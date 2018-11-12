@@ -13,7 +13,7 @@ namespace LP_P1
             string[] gameList = File.ReadAllLines(path);
             Game teste = new Game(gameList[1]);
             teste.PrintAllValues();
-
+            Console.ReadKey();
         }
     }
 }

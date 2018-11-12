@@ -66,53 +66,57 @@ namespace LP_P1
 
         public void PrintAllValues()
         {
-            Console.WriteLine(ID);
-            Console.WriteLine(name);
-            Console.WriteLine(releaseDate.ToString());
-            Console.WriteLine(requiredAge);
-            Console.WriteLine(dlcCount);
-            Console.WriteLine(metacritic);
-            Console.WriteLine(movieCount);
-            Console.WriteLine(recomendationCount);
-            Console.WriteLine(screenshotCount);
-            Console.WriteLine(owners);
-            Console.WriteLine(numberOfPlayers);
-            Console.WriteLine(achievementCount);
-            Console.WriteLine(controllSupport);
-            Console.WriteLine(plataformWindows);
-            Console.WriteLine(plataformLinux);
-            Console.WriteLine(plataformMac);
-            Console.WriteLine(categorySinglePlayer);
-            Console.WriteLine(categoryMultiplayer);
-            Console.WriteLine(categoryCoop);
-            Console.WriteLine(categoryIncludeLevelEditor);
-            Console.WriteLine(categoryVRSupport);
-            Console.WriteLine(printUrl(supportURL));
-            Console.WriteLine(aboutText);
-            Console.WriteLine(printUrl(headerImage));
-            Console.WriteLine(printUrl(website));
-
-
+            Console.WriteLine("id: " + ID);
+            Console.WriteLine("name: " + name);
+            Console.WriteLine("release date: " + releaseDate.ToString());
+            Console.WriteLine("minimum age:" + requiredAge);
+            Console.WriteLine("DLCs:" + dlcCount);
+            Console.WriteLine("metacritic: " + metacritic);
+            Console.WriteLine("movies: " + movieCount);
+            Console.WriteLine("recomendation: " + recomendationCount);
+            Console.WriteLine("screenshots :" + screenshotCount);
+            Console.WriteLine("purchases: " + owners);
+            Console.WriteLine("players: " + numberOfPlayers);
+            Console.WriteLine("achievements: " + achievementCount);
+            Console.WriteLine("have controls: " + controllSupport);
+            Console.WriteLine("windows?: " + plataformWindows);
+            Console.WriteLine("linux?: " + plataformLinux);
+            Console.WriteLine("macOS?: " + plataformMac);
+            Console.WriteLine("sigle player?: " + categorySinglePlayer);
+            Console.WriteLine("multiplayer?: " + categoryMultiplayer);
+            Console.WriteLine("coop?: " + categoryCoop);
+            Console.WriteLine("level editor?: " + categoryIncludeLevelEditor);
+            Console.WriteLine("vr support?: " + categoryVRSupport);
+            Console.WriteLine("site: " + PrintUrl(supportURL));
+            Console.WriteLine("about: " + aboutText);
+            Console.WriteLine("image url: " + PrintUrl(headerImage));
+            Console.WriteLine("prints url: " + PrintUrl(website));
+            
         }
 
         public Uri ChooseUrl(string str)
         {
+            Uri urlbase;
             if (str == "None" || str == "none")
             {
-                Uri urlbase = null;
+                urlbase = null;
                 return urlbase;
             }
             else
             {
-                Uri urlbase = new Uri(str);
+
+                bool isUrl = Uri.TryCreate(str, UriKind.RelativeOrAbsolute, out urlbase);
+                if (isUrl == false)
+                {
+                    urlbase = null;
+                }
                 return urlbase;
             }
-
 
         }
 
 
-        public string printUrl(Uri url)
+        public string PrintUrl(Uri url)
         {
             string s;
             if (url == null)
@@ -121,13 +125,21 @@ namespace LP_P1
             }
             else
             {
-                s = website.ToString();
+                s = url.ToString();
             }
 
             return s;
         }
 
+        public int GetId()
+        {
+            return this.ID;
+        }
 
+        public string GetName()
+        {
+            return this.name;
+        }
 
 
 
