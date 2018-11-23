@@ -8,12 +8,10 @@ namespace LP_P1
     {
         static void Main(string[] args)
         {
-            string path = @"C:\Users\pedro\source\repos\lp2_2018_p1\Games.csv";
+            string path = args[0];
+            FileManager File = new FileManager(path);
 
-            string[] gameList = File.ReadAllLines(path);
-            Game teste = new Game(gameList[1]);
-            teste.PrintAllValues();
-            Console.ReadKey();
+          
         }
     }
 }

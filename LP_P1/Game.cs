@@ -7,6 +7,7 @@ namespace LP_P1
 {
     class Game
     {
+        
         private int ID;
         private string name;
         private DateTime releaseDate;
@@ -33,35 +34,34 @@ namespace LP_P1
         private Uri headerImage;
         private Uri website;
 
-        public Game(string str)
+        public Game(string[] s)
         {
-            string[] data = str.Split(','); //splitted string
+            ID = Convert.ToInt32(s[0]);
+            name = s[1];
+            releaseDate = Convert.ToDateTime(s[2]);
+            requiredAge = Convert.ToInt32(s[3]);
+            dlcCount = Convert.ToInt32(s[4]);
+            metacritic = Convert.ToInt32(s[5]);
+            movieCount = Convert.ToInt32(s[6]);
+            recomendationCount = Convert.ToInt32(s[7]);
+            screenshotCount = Convert.ToInt32(s[8]);
+            owners = Convert.ToInt32(s[9]);
+            numberOfPlayers = Convert.ToInt32(s[10]);
+            achievementCount = Convert.ToInt32(s[11]);
+            controllSupport = Convert.ToBoolean(s[12]);
+            plataformWindows = Convert.ToBoolean(s[13]);
+            plataformLinux = Convert.ToBoolean(s[14]);
+            plataformMac = Convert.ToBoolean(s[15]);
+            categorySinglePlayer = Convert.ToBoolean(s[16]);
+            categoryMultiplayer = Convert.ToBoolean(s[17]);
+            categoryCoop = Convert.ToBoolean(s[18]);
+            categoryIncludeLevelEditor = Convert.ToBoolean(s[19]);
+            categoryVRSupport = Convert.ToBoolean(s[20]);
+            supportURL = ChooseUrl(s[21]);
+            aboutText = s[22];
+            headerImage = ChooseUrl(s[23]);
+            website = ChooseUrl(s[24]);
 
-            ID = Convert.ToInt32(data[0]);
-            name = data[1];
-            releaseDate = Convert.ToDateTime(data[2]);
-            requiredAge = Convert.ToInt32(data[3]);
-            dlcCount = Convert.ToInt32(data[4]);
-            metacritic = Convert.ToInt32(data[5]);
-            movieCount = Convert.ToInt32(data[6]);
-            recomendationCount = Convert.ToInt32(data[7]);
-            screenshotCount = Convert.ToInt32(data[8]);
-            owners = Convert.ToInt32(data[9]);
-            numberOfPlayers = Convert.ToInt32(data[10]);
-            achievementCount = Convert.ToInt32(data[11]);
-            controllSupport = Convert.ToBoolean(data[12]);
-            plataformWindows = Convert.ToBoolean(data[13]);
-            plataformLinux = Convert.ToBoolean(data[14]);
-            plataformMac = Convert.ToBoolean(data[15]);
-            categorySinglePlayer = Convert.ToBoolean(data[16]);
-            categoryMultiplayer = Convert.ToBoolean(data[17]);
-            categoryCoop = Convert.ToBoolean(data[18]);
-            categoryIncludeLevelEditor = Convert.ToBoolean(data[19]);
-            categoryVRSupport = Convert.ToBoolean(data[20]);
-            supportURL = ChooseUrl(data[21]);
-            aboutText = data[22];
-            headerImage = ChooseUrl(data[23]);
-            website = ChooseUrl(data[24]);
         }
 
         public void PrintAllValues()
