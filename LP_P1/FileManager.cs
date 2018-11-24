@@ -16,7 +16,7 @@ namespace LP_P1
 
             if (path.Length == 0)
             {
-                path = "Games.csv";
+                path = "games.csv";
             }
             else { this.path = path; }
 

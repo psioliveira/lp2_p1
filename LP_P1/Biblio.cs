@@ -5,11 +5,13 @@ namespace LP_P1
 {
     class Biblio
     {
-        FileManager file;//file with all games
+        public FileManager file;//file with all games
+        public HashSet<Game> gameStorage;
 
         public Biblio(FileManager file) //constructor 
         {
             this.file = file;
+            gameStorage = CreateHashSet(file.gameList);
         }
 
         public HashSet<Game> CreateHashSet(string[] list)//generates hashset to be used as original list
@@ -29,21 +31,19 @@ namespace LP_P1
             return biblio;
         }
 
-        public HashSet<Game> MakeSearch(HashSet<Game> biblio, int key)
+        public List<Game> MakeSearch(HashSet<Game> biblio, int key)
         {
 
             bool last = false;
             HashSet<Game> Search = new HashSet<Game>();
-
+            List<Game> list = new List<Game>();
+            /*
             switch (key)
             {
                 case 1:
 
                     do
                     {
-
-
-
                     } while (last == false);
 
                     break;
@@ -52,9 +52,6 @@ namespace LP_P1
 
                     do
                     {
-
-
-
                     } while (last == false);
 
                     break;
@@ -63,9 +60,6 @@ namespace LP_P1
 
                     do
                     {
-
-
-
                     } while (last == false);
 
                     break;
@@ -74,9 +68,6 @@ namespace LP_P1
 
                     do
                     {
-
-
-
                     } while (last == false);
 
                     break;
@@ -85,9 +76,6 @@ namespace LP_P1
 
                     do
                     {
-
-
-
                     } while (last == false);
 
                     break;
@@ -96,9 +84,7 @@ namespace LP_P1
 
                     do
                     {
-
-
-
+                    
                     } while (last == false);
 
                     break;
@@ -196,8 +182,10 @@ namespace LP_P1
 
 
             }
+            */
 
-            return Search;
+            foreach(Game g in Search)
+            return list;
         }
         
 

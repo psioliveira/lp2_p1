@@ -15,7 +15,7 @@ namespace LP_P1
         private int dlcCount;
         private int metacritic;
         private int movieCount;
-        private int recomendationCount;
+        private int recommendationCount;
         private int screenshotCount;
         private int owners;
         private int numberOfPlayers;
@@ -43,7 +43,7 @@ namespace LP_P1
             dlcCount = Convert.ToInt32(s[4]);
             metacritic = Convert.ToInt32(s[5]);
             movieCount = Convert.ToInt32(s[6]);
-            recomendationCount = Convert.ToInt32(s[7]);
+            recommendationCount = Convert.ToInt32(s[7]);
             screenshotCount = Convert.ToInt32(s[8]);
             owners = Convert.ToInt32(s[9]);
             numberOfPlayers = Convert.ToInt32(s[10]);
@@ -73,7 +73,7 @@ namespace LP_P1
             Console.WriteLine("DLCs:" + dlcCount);
             Console.WriteLine("metacritic: " + metacritic);
             Console.WriteLine("movies: " + movieCount);
-            Console.WriteLine("recomendation: " + recomendationCount);
+            Console.WriteLine("recomendation: " + recommendationCount);
             Console.WriteLine("screenshots :" + screenshotCount);
             Console.WriteLine("purchases: " + owners);
             Console.WriteLine("players: " + numberOfPlayers);
