@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{37999C1F-E8EC-4EC2-8C27-C7D9CDC14E71}</ProjectGuid>
+    <ProjectGuid>{D2C05CA7-09A5-4857-AB5A-D8C826651A83}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>LP_P1</RootNamespace>
     <AssemblyName>LP_P1</AssemblyName>
@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Biblio.cs" />
     <Compile Include="FileManager.cs" />
     <Compile Include="Game.cs" />
-    <Compile Include="Biblio.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderer.cs" />
