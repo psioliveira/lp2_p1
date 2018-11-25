@@ -24,9 +24,9 @@ namespace LP_P1
                 string[] s = file.SplitLine(file.gameList[i]);//split each line into 24 arguments
                 Game game = new Game(s); //generate new game object
 
-                if (biblio.TryGetValue(game.GetId(), out Game g) == false)
+                if (biblio.TryGetValue(game.id, out Game g) == false)
                 {
-                    biblio.Add(game.GetId(), game); //add one game into the Dictionary with ID as key
+                    biblio.Add(game.id, game); //add one game into the Dictionary with ID as key
                 }
             }
             return biblio;

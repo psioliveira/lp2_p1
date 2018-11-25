@@ -183,7 +183,7 @@ namespace LP_P1
             Console.WriteLine("(02) DATE");
             Console.WriteLine("(03) AGE");
             Console.WriteLine("(04) METACRITIC");
-            Console.WriteLine("(05) RECOMENDATIONS");
+            Console.WriteLine("(05) RECOMMENDATIONS");
             Console.WriteLine("(06) CONTROLLER SUPPORT");
             Console.WriteLine("(07) FOR WINDOWS");
             Console.WriteLine("(08) FOR LINUX");
@@ -220,7 +220,8 @@ namespace LP_P1
                     break;
                 case 5:
                     Console.Clear();
-                    values[4] = "true";
+                    Console.WriteLine("enter the RECOMMENDATIONS:");
+                    values[4] = Console.ReadLine();
                     break;
                 case 6:
                     Console.Clear();

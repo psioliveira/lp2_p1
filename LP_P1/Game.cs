@@ -8,41 +8,41 @@ namespace LP_P1
     class Game
     {
 
-        private readonly int ID;
-        private readonly string name;
-        private readonly DateTime releaseDate;
-        private readonly int requiredAge;
-        private readonly int dlcCount;
-        private readonly int metacritic;
+        internal readonly int id;
+        internal readonly string name;
+        internal readonly DateTime releaseDate;
+        internal readonly int requiredAge;
+        internal readonly int dlcCount;
+        internal readonly int metacritic;
 
 
 
 
 
 
-        private readonly int movieCount;
-        private readonly int recommendationCount;
-        private readonly int screenshotCount;
-        private readonly int owners;
-        private readonly int numberOfPlayers;
-        private readonly int achievementCount;
-        private readonly bool controllSupport;
-        private readonly bool plataformWindows;
-        private readonly bool plataformLinux;
-        private readonly bool plataformMac;
-        private readonly bool categorySinglePlayer;
-        private readonly bool categoryMultiplayer;
-        private readonly bool categoryCoop;
-        private readonly bool categoryIncludeLevelEditor;
-        private readonly bool categoryVRSupport;
-        private readonly Uri supportURL;
-        private readonly string aboutText;
-        private readonly Uri headerImage;
-        private readonly Uri website;
+        internal readonly int movieCount;
+        internal readonly int recommendationCount;
+        internal readonly int screenshotCount;
+        internal readonly int owners;
+        internal readonly int numberOfPlayers;
+        internal readonly int achievementCount;
+        internal readonly bool controllSupport;
+        internal readonly bool platformWindows;
+        internal readonly bool platformLinux;
+        internal readonly bool platformMac;
+        internal readonly bool categorySinglePlayer;
+        internal readonly bool categoryMultiplayer;
+        internal readonly bool categoryCoop;
+        internal readonly bool categoryIncludeLevelEditor;
+        internal readonly bool categoryVRSupport;
+        internal readonly Uri supportURL;
+        internal readonly string aboutText;
+        internal readonly Uri headerImage;
+        internal readonly Uri website;
 
         public Game(string[] s)
         {
-            ID = Convert.ToInt32(s[0]);
+            id = Convert.ToInt32(s[0]);
             name = s[1];
             releaseDate =ChooseDateTime(s[2]);
             requiredAge = Convert.ToInt32(s[3]);
@@ -55,9 +55,9 @@ namespace LP_P1
             numberOfPlayers = Convert.ToInt32(s[10]);
             achievementCount = Convert.ToInt32(s[11]);
             controllSupport = Convert.ToBoolean(s[12]);
-            plataformWindows = Convert.ToBoolean(s[13]);
-            plataformLinux = Convert.ToBoolean(s[14]);
-            plataformMac = Convert.ToBoolean(s[15]);
+            platformWindows = Convert.ToBoolean(s[13]);
+            platformLinux = Convert.ToBoolean(s[14]);
+            platformMac = Convert.ToBoolean(s[15]);
             categorySinglePlayer = Convert.ToBoolean(s[16]);
             categoryMultiplayer = Convert.ToBoolean(s[17]);
             categoryCoop = Convert.ToBoolean(s[18]);
@@ -73,7 +73,7 @@ namespace LP_P1
         public void PrintAllValues()
         {
             Console.WriteLine("id: " + ID);
-            Console.WriteLine("name: " + name);
+            Console.WriteLine("name: " + releaseDate);
             Console.WriteLine("release date: " + releaseDate.ToString());
             Console.WriteLine("minimum age:" + requiredAge);
             Console.WriteLine("DLCs:" + dlcCount);
@@ -85,9 +85,9 @@ namespace LP_P1
             Console.WriteLine("players: " + numberOfPlayers);
             Console.WriteLine("achievements: " + achievementCount);
             Console.WriteLine("have controls: " + controllSupport);
-            Console.WriteLine("for windows: " + plataformWindows);
-            Console.WriteLine("for linux: " + plataformLinux);
-            Console.WriteLine("for macOS: " + plataformMac);
+            Console.WriteLine("for windows: " + platformWindows);
+            Console.WriteLine("for linux: " + platformLinux);
+            Console.WriteLine("for macOS: " + platformMac);
             Console.WriteLine("single player: " + categorySinglePlayer);
             Console.WriteLine("multiplayer: " + categoryMultiplayer);
             Console.WriteLine("coop: " + categoryCoop);
@@ -157,18 +157,6 @@ namespace LP_P1
             }
 
         }
-
-        public int GetId()
-        {
-            return this.ID;
-        }
-
-        public string GetName()
-        {
-            return this.name;
-        }
-
-
 
     }
 }
