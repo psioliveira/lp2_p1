@@ -15,7 +15,11 @@ namespace LP_P1
             Selection selection = new Selection(biblio.MakeList(biblio.gameStorage), renderer);
 
             selection.StartFiltering();
-          
+            
+            selection.PrintFiltered();
+
+            Console.ReadKey();
+
         }
     }
 }

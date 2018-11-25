@@ -14,12 +14,6 @@ namespace LP_P1
         internal readonly int requiredAge;
         internal readonly int dlcCount;
         internal readonly int metacritic;
-
-
-
-
-
-
         internal readonly int movieCount;
         internal readonly int recommendationCount;
         internal readonly int screenshotCount;
@@ -100,7 +94,7 @@ namespace LP_P1
             
         }
 
-        public Uri ChooseUrl(string str)
+        private Uri ChooseUrl(string str)
         {
             Uri urlbase;
             if (str == "None" || str == "none" || str ==" ")
@@ -121,7 +115,7 @@ namespace LP_P1
 
         }
 
-        public string PrintUrl(Uri url)
+        private string PrintUrl(Uri url)
         {
             string s;
             if (url == null)
@@ -137,7 +131,7 @@ namespace LP_P1
         }
 
 
-        public DateTime ChooseDateTime(string str)
+        private DateTime ChooseDateTime(string str)
         {
             DateTime DateTimeBase;
             if (str == "None" || str == "none" || str == " ")

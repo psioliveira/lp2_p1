@@ -7,7 +7,7 @@ namespace LP_P1
 {
     class FileManager
     {
-        private string path;
+        private readonly string path;
         internal string[] gameList;
 
 
