@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace LP_P1
@@ -6,42 +7,37 @@ namespace LP_P1
     class Biblio
     {
         public FileManager file;//file with all games
-        public HashSet<Game> gameStorage;
+        public Dictionary<int, Game> gameStorage;
 
         public Biblio(FileManager file) //constructor 
         {
             this.file = file;
-            gameStorage = CreateHashSet(file.gameList);
+            gameStorage = CreateDictionary(file.gameList);
         }
 
-        public HashSet<Game> CreateHashSet(string[] list)//generates hashset to be used as original list
+        public Dictionary<int, Game> CreateDictionary(string[] list)//generates hashset to be used as original list
         {
-            HashSet<Game> biblio = new HashSet<Game>(); //new hashset with games objects
+            Dictionary<int, Game> biblio = new Dictionary<int, Game>(); //new hashset with games objects
 
             for (int i = 1; i < list.Length; i++) //for each game in Games.csv file
             {
                 string[] s = file.SplitLine(file.gameList[i]);//split each line into 24 arguments
                 Game game = new Game(s); //generate new game object
 
-                if (!biblio.Contains(game)) //ferify if the hashcode contains this game object already
-                {
-                    biblio.Add(game);
-                }
+                
+                    biblio.Add(game.GetId(),game);
+                
             }
             return biblio;
         }
 
-        public List<Game> MakeSearch(HashSet<Game> biblio, int key)
+        public List<Game> MakeSearch(Dictionary<int, Game> biblio, int key)
         {
             
-            HashSet<Game> Search = new HashSet<Game>();
+            Dictionary<int, Game> Search = new Dictionary<int, Game>();
             List<Game> list = new List<Game>();
-            
 
-            foreach(Game g in Search)
-            {
-                list.Add(g);
-            }
+            list = biblio.Values.ToList();
             return list;
         }
         

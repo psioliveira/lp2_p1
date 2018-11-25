@@ -6,6 +6,12 @@ namespace LP_P1
     {
         public Renderer() { }
 
+        public string[] values = new string[15] { " ", " ", " ", " ", " ", " ",
+                                                  " ", " ", " ", " ", " ", " ",
+                                                                  " "," "," "};
+
+
+
         //just one welcome
         public void Welcome() { Console.Write(" Welcome, "); }
 
@@ -17,6 +23,7 @@ namespace LP_P1
             Console.WriteLine("(01) SPECIFY ORDER TYPE");
             Console.WriteLine("(02) SEARCH FILTER");
             Console.WriteLine("(03) START SEARCH");
+            Console.WriteLine("(04) SEARCH BY ID");
             Console.WriteLine("(00) QUIT");
 
             int answer = Convert.ToInt32(Console.ReadLine());
@@ -33,9 +40,15 @@ namespace LP_P1
                     break;
                 case 3: //search
                     Console.Clear();
+                    trySearch = true;
                     Console.WriteLine("aaa");
                     break;
-                case 4: //exit program
+                case 4: //search
+                    Console.Clear();
+                    trySearch = true;
+                    Console.WriteLine("aaa");
+                    break;
+                case 0: //exit program
                     Console.Clear();
                     Environment.Exit(0);
                     break;
@@ -45,10 +58,10 @@ namespace LP_P1
         }
 
 
-        public bool[] SortMenu()//print sort menu 
+        public void SortMenu()//print sort menu 
         {
-            bool[] sort = new bool[9];
 
+        	Console.WriteLine("selected:{0} ", values[14]);
             Console.WriteLine("select one sort type: ");
             Console.WriteLine("(01) ID");
             Console.WriteLine("(02) NAME");
@@ -59,6 +72,8 @@ namespace LP_P1
             Console.WriteLine("(07) NUMBER OF OWNERS");
             Console.WriteLine("(08) NUMBER OF PLAYERS");
             Console.WriteLine("(09) NUMBER OF ACHIEVEMENTS");
+            Console.WriteLine("");
+            Console.WriteLine("(10) CLEAR");
             Console.WriteLine("(00) BACK");
 
 
@@ -69,57 +84,68 @@ namespace LP_P1
                 case 1:
                     Console.Clear();
                     Console.WriteLine("Id selected");
-                    sort[0] = true;
+                    values[14] = "ID";
                     break;
                 case 2:
                     Console.Clear();
                     Console.WriteLine("name selected");
-                    sort[1] = true;
+                    values[14] = "NAME";
                     break;
                 case 3:
                     Console.Clear();
                     Console.WriteLine("launch date selected");
-                    sort[2] = true;
+                    values[14] = "LAUNCH DATE";
                     break;
                 case 4:
                     Console.Clear();
                     Console.WriteLine("metacritic selected");
-                    sort[3] = true;
+                    values[14] = "METACRITIC";
                     break;
                 case 5:
                     Console.Clear();
                     Console.WriteLine("number of dlcs selected");
-                    sort[4] = true;
+                    values[14] = "DLCS";
                     break;
                 case 6:
                     Console.Clear();
                     Console.WriteLine("recommendations selected");
-                    sort[5] = true;
+                    values[14] = "RECOMMENDATIONS";
                     break;
                 case 7:
                     Console.Clear();
                     Console.WriteLine("number of owners selected");
-                    sort[6] = true;
+                    values[14] = "OWNERS";
                     break;
                 case 8:
                     Console.Clear();
                     Console.WriteLine("number of players selected");
-                    sort[7] = true;
+                     values[14] = "PLAYERS";
                     break;
                 case 9:
                     Console.Clear();
                     Console.WriteLine("number of achievements selected");
-                    sort[8] = true;
+                    values[14] = "ACHIEVEMENTS";
+                    break;
+                case 10:
+                    Console.Clear();
+                    Console.WriteLine("SORT CLEARED");
+                    values[14] = "NONE";
                     break;
 
             }
-
-            return sort;
+            
         }
 
         public void SearchMenu()//print search menu 
-        {
-            Console.WriteLine("Search by: ");
+        {   
+        	Console.WriteLine("SELECTED: {0} {0} {0} {0} {0} {0} {0}"
+        							   +" {0} {0} {0} {0} {0} {0} {0}",
+        							   values[0],values[1],values[2],
+        							   values[3],values[4],values[5],
+        							   values[6],values[7],values[8],
+        							   values[9],values[10],values[11],
+        							   			 values[12],values[13]);
+        	Console.WriteLine("Search by: ");
             Console.WriteLine("(01) NAME");
             Console.WriteLine("(02) DATE");
             Console.WriteLine("(03) AGE");
@@ -137,79 +163,67 @@ namespace LP_P1
             Console.WriteLine("(00) BACK");
 
             int answer = Convert.ToInt32(Console.ReadLine());
-            bool[] sort = new bool[14];
-            string[] data = new string[14];
             switch (answer)
             {
                 case 1:
                     Console.Clear();
-                    Console.WriteLine("enter the ID:");
-                    data[0] = Console.ReadLine();
+                    Console.WriteLine("enter the NAME:");
+                    values[0] = Console.ReadLine();
                     break;
                 case 2:
                     Console.Clear();
-                    Console.WriteLine("enter the ID:");
-                    data[1] = Console.ReadLine();
+                    Console.WriteLine("enter the DATE:");
+                    values[1] = Console.ReadLine();
                     break;
                 case 3:
                     Console.Clear();
-                    Console.WriteLine("enter the ID:");
-                     data[2] = Console.ReadLine();
+                    Console.WriteLine("enter the AGE:");
+                    values[2] = Console.ReadLine();
                     break;
                 case 4:
                     Console.Clear();
-                    Console.WriteLine("enter the ID:");
-                     data[3] = Console.ReadLine();
+                    Console.WriteLine("enter the METACRITIC:");
+                    values[3] = Console.ReadLine();
                     break;
                 case 5:
                     Console.Clear();
-                    Console.WriteLine("enter the ID:");
-                     data[4] = Console.ReadLine();
+                    values[4] = "true";
                     break;
                 case 6:
                     Console.Clear();
-                    Console.WriteLine("enter the ID:");
-                     data[5] = Console.ReadLine();
+                    values[5] = "true";
                     break;
                 case 7:
                     Console.Clear();
-                    Console.WriteLine("enter the ID:");
-                     data[6] = Console.ReadLine();
+                    values[6] = "true";
                     break;
                 case 8:
                     Console.Clear();
-                    Console.WriteLine("enter the ID:");
-                     data[7] = Console.ReadLine();
+                    values[7] = "true";
                     break;
                 case 9:
                     Console.Clear();
-                    Console.WriteLine("enter the ID:");
-                     data[8] = Console.ReadLine();
+                    values[8] = "true";
                     break;
                 case 10:
                     Console.Clear();
-                    Console.WriteLine("enter the ID:");
-                     data[9] = Console.ReadLine();
+                    values[9] = "true";
                     break;
                 case 11:
                     Console.Clear();
-                    Console.WriteLine("enter the ID:");
-                     data[10] = Console.ReadLine();
+                    values[10] = "true";
                     break;
                 case 12:
                     Console.Clear();
-                    Console.WriteLine("enter the ID:");
-                     data[11] = Console.ReadLine();
+                    values[11] = "true";
                     break;
                 case 13:
                     Console.Clear();
-                    Console.WriteLine("enter the ID:");
-                     data[12] = Console.ReadLine();
+                    values[12] = "true";
                     break;
                 case 14:
                     Console.Clear();
-                    Console.WriteLine("enter the ID:");
-                     data[13] = Console.ReadLine();
+                    values[13] = "true";
                     break;
                 case 0:
                     Console.Clear();
