@@ -17,13 +17,26 @@ namespace LP_P1
             if (path.Length == 0)
             {
                 Console.WriteLine("path not found.");
-                System.Environment.Exit(1); 
+                System.Environment.Exit(1);
             }
             else { this.path = path; }
 
-            gameList = File.ReadAllLines(path);
+            gameList = TryOppen(path);
         }
-        
+
+        private string[] TryOppen(string path)
+        {
+            try
+            {
+                return File.ReadAllLines(path);
+                 
+            }
+            catch
+            {
+                throw new Exception("File not found or FileType Could not be oppened");
+                
+            }
+        }
 
         public string[] SplitLine(string str)
         {

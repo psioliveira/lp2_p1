@@ -66,8 +66,9 @@ namespace LP_P1
 
         public void PrintAllValues()
         {
+            Console.WriteLine("");
             Console.WriteLine("id: " + id);
-            Console.WriteLine("name: " + releaseDate);
+            Console.WriteLine("name: " + name);
             Console.WriteLine("release date: " + releaseDate.ToString());
             Console.WriteLine("minimum age:" + requiredAge);
             Console.WriteLine("DLCs:" + dlcCount);
@@ -91,7 +92,9 @@ namespace LP_P1
             Console.WriteLine("about: " + aboutText);
             Console.WriteLine("image url: " + PrintUrl(headerImage));
             Console.WriteLine("prints url: " + PrintUrl(website));
-            
+            Console.WriteLine("");
+            Console.WriteLine("");
+
         }
 
         private Uri ChooseUrl(string str)

@@ -6,9 +6,9 @@ namespace LP_P1
     {
         public Renderer() { }
 
-        internal string[] values = new string[16] { " ", " ", " ", " ", " ", " ",
-                                                  " ", " ", " ", " ", " ", " ",
-                                                                  " "," "," "," "};
+        internal string[] values = new string[16] { " ", " ", " ", " ", " ",
+                                                    " ", " ", " ", " ", " ",
+                                                    " ", " ", " ", " ", " ", " "};
 
         public void Menu()//print main menu 
         {
@@ -206,62 +206,76 @@ namespace LP_P1
                     Console.Clear();
                     Console.WriteLine("enter the NAME:");
                     values[0] = Console.ReadLine();
+                    SearchMenu();
                     break;
                 case 2:
                     Console.Clear();
-                    Console.WriteLine("enter the DATE:");
+                    Console.WriteLine("enter the DATE: (Example: Nov 1 2000)");
                     values[1] = Console.ReadLine();
+                    SearchMenu();
                     break;
                 case 3:
                     Console.Clear();
                     Console.WriteLine("enter the AGE:");
                     values[2] = Console.ReadLine();
+                    SearchMenu();
                     break;
                 case 4:
                     Console.Clear();
-                    Console.WriteLine("enter the METACRITIC:");
+                    Console.WriteLine("enter the METACRITIC(int value):");
                     values[3] = Console.ReadLine();
+                    SearchMenu();
                     break;
                 case 5:
                     Console.Clear();
                     Console.WriteLine("enter the RECOMMENDATIONS:");
                     values[4] = Console.ReadLine();
+                    SearchMenu();
                     break;
                 case 6:
                     Console.Clear();
                     values[5] = "true";
+                    SearchMenu();
                     break;
                 case 7:
                     Console.Clear();
                     values[6] = "true";
+                    SearchMenu();
                     break;
                 case 8:
                     Console.Clear();
                     values[7] = "true";
+                    SearchMenu();
                     break;
                 case 9:
                     Console.Clear();
                     values[8] = "true";
+                    SearchMenu();
                     break;
                 case 10:
                     Console.Clear();
                     values[9] = "true";
+                    SearchMenu();
                     break;
                 case 11:
                     Console.Clear();
                     values[10] = "true";
+                    SearchMenu();
                     break;
                 case 12:
                     Console.Clear();
                     values[11] = "true";
+                    SearchMenu();
                     break;
                 case 13:
                     Console.Clear();
                     values[12] = "true";
+                    SearchMenu();
                     break;
                 case 14:
                     Console.Clear();
                     values[13] = "true";
+                    SearchMenu();
                     break;
                 case 0:
                     Console.Clear();
