@@ -7,38 +7,44 @@ namespace LP_P1
 {
     class Game
     {
-        
-        private int ID;
-        private string name;
-        private DateTime releaseDate;
-        private int requiredAge;
-        private int dlcCount;
-        private int metacritic;
-        private int movieCount;
-        private int recommendationCount;
-        private int screenshotCount;
-        private int owners;
-        private int numberOfPlayers;
-        private int achievementCount;
-        private bool controllSupport;
-        private bool plataformWindows;
-        private bool plataformLinux;
-        private bool plataformMac;
-        private bool categorySinglePlayer;
-        private bool categoryMultiplayer;
-        private bool categoryCoop;
-        private bool categoryIncludeLevelEditor;
-        private bool categoryVRSupport;
-        private Uri supportURL;
-        private string aboutText;
-        private Uri headerImage;
-        private Uri website;
+
+        private readonly int ID;
+        private readonly string name;
+        private readonly DateTime releaseDate;
+        private readonly int requiredAge;
+        private readonly int dlcCount;
+        private readonly int metacritic;
+
+
+
+
+
+
+        private readonly int movieCount;
+        private readonly int recommendationCount;
+        private readonly int screenshotCount;
+        private readonly int owners;
+        private readonly int numberOfPlayers;
+        private readonly int achievementCount;
+        private readonly bool controllSupport;
+        private readonly bool plataformWindows;
+        private readonly bool plataformLinux;
+        private readonly bool plataformMac;
+        private readonly bool categorySinglePlayer;
+        private readonly bool categoryMultiplayer;
+        private readonly bool categoryCoop;
+        private readonly bool categoryIncludeLevelEditor;
+        private readonly bool categoryVRSupport;
+        private readonly Uri supportURL;
+        private readonly string aboutText;
+        private readonly Uri headerImage;
+        private readonly Uri website;
 
         public Game(string[] s)
         {
             ID = Convert.ToInt32(s[0]);
             name = s[1];
-            releaseDate = Convert.ToDateTime(s[2]);
+            releaseDate =ChooseDateTime(s[2]);
             requiredAge = Convert.ToInt32(s[3]);
             dlcCount = Convert.ToInt32(s[4]);
             metacritic = Convert.ToInt32(s[5]);
@@ -73,20 +79,20 @@ namespace LP_P1
             Console.WriteLine("DLCs:" + dlcCount);
             Console.WriteLine("metacritic: " + metacritic);
             Console.WriteLine("movies: " + movieCount);
-            Console.WriteLine("recomendation: " + recommendationCount);
+            Console.WriteLine("recommendation: " + recommendationCount);
             Console.WriteLine("screenshots :" + screenshotCount);
             Console.WriteLine("purchases: " + owners);
             Console.WriteLine("players: " + numberOfPlayers);
             Console.WriteLine("achievements: " + achievementCount);
             Console.WriteLine("have controls: " + controllSupport);
-            Console.WriteLine("windows?: " + plataformWindows);
-            Console.WriteLine("linux?: " + plataformLinux);
-            Console.WriteLine("macOS?: " + plataformMac);
-            Console.WriteLine("sigle player?: " + categorySinglePlayer);
-            Console.WriteLine("multiplayer?: " + categoryMultiplayer);
-            Console.WriteLine("coop?: " + categoryCoop);
-            Console.WriteLine("level editor?: " + categoryIncludeLevelEditor);
-            Console.WriteLine("vr support?: " + categoryVRSupport);
+            Console.WriteLine("for windows: " + plataformWindows);
+            Console.WriteLine("for linux: " + plataformLinux);
+            Console.WriteLine("for macOS: " + plataformMac);
+            Console.WriteLine("single player: " + categorySinglePlayer);
+            Console.WriteLine("multiplayer: " + categoryMultiplayer);
+            Console.WriteLine("coop: " + categoryCoop);
+            Console.WriteLine("level editor: " + categoryIncludeLevelEditor);
+            Console.WriteLine("vr supported: " + categoryVRSupport);
             Console.WriteLine("site: " + PrintUrl(supportURL));
             Console.WriteLine("about: " + aboutText);
             Console.WriteLine("image url: " + PrintUrl(headerImage));
@@ -97,7 +103,7 @@ namespace LP_P1
         public Uri ChooseUrl(string str)
         {
             Uri urlbase;
-            if (str == "None" || str == "none")
+            if (str == "None" || str == "none" || str ==" ")
             {
                 urlbase = null;
                 return urlbase;
@@ -115,7 +121,6 @@ namespace LP_P1
 
         }
 
-
         public string PrintUrl(Uri url)
         {
             string s;
@@ -129,6 +134,28 @@ namespace LP_P1
             }
 
             return s;
+        }
+
+
+        public DateTime ChooseDateTime(string str)
+        {
+            DateTime DateTimeBase;
+            if (str == "None" || str == "none" || str == " ")
+            {
+                DateTimeBase = default(DateTime);
+                return DateTimeBase;
+            }
+            else
+            {
+
+                bool isDateTime = DateTime.TryParse(str, out DateTimeBase);
+                if (isDateTime == false)
+                {
+                    DateTimeBase = default(DateTime);
+                }
+                return DateTimeBase;
+            }
+
         }
 
         public int GetId()

@@ -16,7 +16,8 @@ namespace LP_P1
 
             if (path.Length == 0)
             {
-                path = "games.csv";
+                Console.WriteLine("path not found.");
+                System.Environment.Exit(1); 
             }
             else { this.path = path; }
 

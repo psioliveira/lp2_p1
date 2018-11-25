@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 namespace LP_P1
 {
-    class Biblio
+    internal class Biblio
     {
-        public FileManager file;//file with all games
-        public Dictionary<int, Game> gameStorage;
+        internal FileManager file;//file with all games
+        internal Dictionary<int, Game> gameStorage;
 
         public Biblio(FileManager file) //constructor 
         {
@@ -24,23 +24,28 @@ namespace LP_P1
                 string[] s = file.SplitLine(file.gameList[i]);//split each line into 24 arguments
                 Game game = new Game(s); //generate new game object
 
-                
-                    biblio.Add(game.GetId(),game);
-                
+                if (biblio.TryGetValue(game.GetId(), out Game g) == false)
+                {
+                    biblio.Add(game.GetId(), game); //add one game into the Dictionary with ID as key
+                }
             }
             return biblio;
         }
 
-        public List<Game> MakeSearch(Dictionary<int, Game> biblio, int key)
+        public List<Game> MakeList(Dictionary<int, Game> biblio)
         {
-            
-            Dictionary<int, Game> Search = new Dictionary<int, Game>();
-            List<Game> list = new List<Game>();
 
-            list = biblio.Values.ToList();
+            List<Game> list = new List<Game>();
+            list = biblio.Values.ToList(); //generate one list with all Game objects inside this Dictionary
             return list;
         }
-        
+
+        public Game MakeSearch(Dictionary<int, Game> biblio, int key)
+        {
+            
+            biblio.TryGetValue(key, out Game game);//return one Game object with a especific ID
+            return game;
+        }
 
     }
 

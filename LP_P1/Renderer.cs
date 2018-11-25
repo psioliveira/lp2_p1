@@ -2,28 +2,21 @@
 
 namespace LP_P1
 {
-    class Renderer
+    internal class Renderer
     {
         public Renderer() { }
 
-        public string[] values = new string[15] { " ", " ", " ", " ", " ", " ",
+        internal string[] values = new string[16] { " ", " ", " ", " ", " ", " ",
                                                   " ", " ", " ", " ", " ", " ",
-                                                                  " "," "," "};
+                                                                  " "," "," "," "};
 
-
-
-        //just one welcome
-        public void Welcome() { Console.Write(" Welcome, "); }
-
-        public bool MainMenu()//print main menu 
+        public bool Menu()//print main menu 
         {
             bool trySearch = false;
 
-            Console.WriteLine(" select one option: ");
-            Console.WriteLine("(01) SPECIFY ORDER TYPE");
-            Console.WriteLine("(02) SEARCH FILTER");
-            Console.WriteLine("(03) START SEARCH");
-            Console.WriteLine("(04) SEARCH BY ID");
+            Console.WriteLine(" SELECT AN OPTION ");
+            Console.WriteLine("(01) SELECT ONE GAME");
+            Console.WriteLine("(02) MAKE ONE SEARCH");
             Console.WriteLine("(00) QUIT");
 
             int answer = Convert.ToInt32(Console.ReadLine());
@@ -32,28 +25,68 @@ namespace LP_P1
             {
                 case 1: //add sort type
                     Console.Clear();
-                    SortMenu();
-                    break;
-                case 2: //add search filter
-                    Console.Clear();
-                    SearchMenu();
-                    break;
-                case 3: //search
-                    Console.Clear();
+                    Console.WriteLine("INSERT ONE ID: ");
+                    values[15] = Console.ReadLine();
                     trySearch = true;
-                    Console.WriteLine("aaa");
                     break;
-                case 4: //search
+                case 2: //go to option menu
                     Console.Clear();
-                    trySearch = true;
-                    Console.WriteLine("aaa");
+                    trySearch = OptionMenu();
                     break;
                 case 0: //exit program
                     Console.Clear();
                     Environment.Exit(0);
                     break;
             }
+            return trySearch;
+        }
 
+        public bool OptionMenu()//print main menu 
+        {
+            
+            Console.WriteLine(" select one option: ");
+            Console.WriteLine("(01) SPECIFY ORDER TYPE");
+            Console.WriteLine("(02) SEARCH FILTER");
+            Console.WriteLine("(03) START SEARCH");
+            Console.WriteLine("");
+            Console.WriteLine("(04) CLEAR ALL OPTIONS");
+            Console.WriteLine("(00) BACK");
+
+            int answer = Convert.ToInt32(Console.ReadLine());
+            bool trySearch = false;
+
+            switch (answer)
+            {
+                
+
+                case 1: //add sort type
+                    Console.Clear();
+                    SortMenu();
+                    break;
+
+                case 2: //add search filter
+                    Console.Clear();
+                    SearchMenu();
+                    break;
+
+                case 3: //search
+                    Console.Clear();
+                    trySearch = true;
+                    break;
+                    
+                case 4: //reset values
+                    Console.Clear();
+
+                    Console.WriteLine("VALUES RESETED");
+                    values = new string[16] { " ", " ", " ", " ", " ", " "," ",
+                                        " ", " ", " ", " ", " "," "," "," "," "};
+                    break;
+
+                case 0: //go to main menu
+                    Console.Clear();
+                    Menu();
+                    break;
+            }
             return trySearch;
         }
 
@@ -129,7 +162,7 @@ namespace LP_P1
                 case 10:
                     Console.Clear();
                     Console.WriteLine("SORT CLEARED");
-                    values[14] = "NONE";
+                    values[14] = " ";
                     break;
 
             }
@@ -138,8 +171,8 @@ namespace LP_P1
 
         public void SearchMenu()//print search menu 
         {   
-        	Console.WriteLine("SELECTED: {0} {0} {0} {0} {0} {0} {0}"
-        							   +" {0} {0} {0} {0} {0} {0} {0}",
+        	Console.WriteLine("SELECTED: {0} {1} {2} {3} {4} {5} {6}"
+        							   +" {7} {8} {9} {10} {11} {12} {13}",
         							   values[0],values[1],values[2],
         							   values[3],values[4],values[5],
         							   values[6],values[7],values[8],
@@ -227,7 +260,7 @@ namespace LP_P1
                     break;
                 case 0:
                     Console.Clear();
-                    MainMenu();
+                    OptionMenu();
                     break;
             }
 

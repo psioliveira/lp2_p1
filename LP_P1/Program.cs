@@ -8,10 +8,10 @@ namespace LP_P1
     {
         static void Main(string[] args)
         {
-            string path = "";
+            string path = args[0];
             FileManager File = new FileManager(path);
             Biblio biblio = new Biblio(File);
-            
+            Renderer renderer = new Renderer();
             
           
         }
