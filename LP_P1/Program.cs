@@ -10,10 +10,10 @@ namespace LP_P1
             string path = args[0];
             FileManager File = new FileManager(path);
             ConsoleKeyInfo k = new ConsoleKeyInfo();
+            Biblio biblio = new Biblio(File);
             do
             {
                 Console.Clear();
-                Biblio biblio = new Biblio(File);
                 Renderer renderer = new Renderer();
                 Selection selection = new Selection(biblio.MakeList(biblio.gameStorage), renderer);
 
