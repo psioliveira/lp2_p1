@@ -72,6 +72,8 @@ namespace LP_P1
             Console.WriteLine("release date: " + releaseDate.ToString());
             Console.WriteLine("minimum age:" + requiredAge);
             Console.WriteLine("===========================");
+            Console.WriteLine("about: \n " + aboutText);
+            Console.WriteLine("===========================");
             Console.WriteLine("recommendation: " + recommendationCount);
             Console.WriteLine("DLCs:" + dlcCount);
             Console.WriteLine("metacritic: " + metacritic);
@@ -81,6 +83,7 @@ namespace LP_P1
             Console.WriteLine("purchases: " + owners);
             Console.WriteLine("achievements: " + achievementCount);
             Console.WriteLine("have controls: " + controllSupport);
+            Console.WriteLine("===========================");
             Console.WriteLine("for windows: " + platformWindows);
             Console.WriteLine("for linux: " + platformLinux);
             Console.WriteLine("for macOS: " + platformMac);
@@ -90,12 +93,15 @@ namespace LP_P1
             Console.WriteLine("level editor: " + categoryIncludeLevelEditor);
             Console.WriteLine("vr supported: " + categoryVRSupport);
             Console.WriteLine("about: " + aboutText);
+            Console.WriteLine("===========================");
             Console.WriteLine("image url: " + PrintUrl(headerImage));
             Console.WriteLine("prints url: " + PrintUrl(website));
+
+            Console.WriteLine("===========================");
             Console.WriteLine("");
             Console.WriteLine("");
 
-            SaveImage();
+           // SaveImage();
 
 
         }

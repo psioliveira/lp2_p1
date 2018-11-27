@@ -36,7 +36,7 @@ namespace LP_P1
             }
         }
 
-        public string[] SplitLine(string str)
+        internal string[] SplitLine(string str)
         {
             string[] data = str.Split(','); //splitted string
             return data;

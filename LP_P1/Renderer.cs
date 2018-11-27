@@ -13,15 +13,34 @@ namespace LP_P1
         internal string[] values = new string[16] { " ", " ", " ", " ", " ",
                                                     " ", " ", " ", " ", " ",
                                                     " ", " ", " ", " ", " ", " "};
-        
-        public void Menu()//print main menu 
+
+        internal void Menu()//print main menu 
         {
             Console.WriteLine(" SELECT AN OPTION ");
             Console.WriteLine("(01) SELECT ONE GAME");
             Console.WriteLine("(02) MAKE ONE SEARCH");
             Console.WriteLine("(00) QUIT");
 
-            int answer = Convert.ToInt32(Console.ReadLine());
+            int answer;
+            bool flag = false;
+
+            do
+            {
+                string userInput = Console.ReadLine();
+                flag = int.TryParse(userInput, out answer);
+                if (answer < 0 || answer > 2 || flag == false)
+                {
+                    Console.Clear();
+                    Console.WriteLine(" SELECT AN OPTION ");
+                    Console.WriteLine("(01) SELECT ONE GAME");
+                    Console.WriteLine("(02) MAKE ONE SEARCH");
+                    Console.WriteLine("(00) QUIT");
+                    Console.WriteLine("add one value between 0 and 2");
+                    flag = false;
+                }
+
+            } while (flag == false);
+            flag = false;
 
             switch (answer)
             {
@@ -40,10 +59,10 @@ namespace LP_P1
                     Environment.Exit(0);
                     break;
             }
-           
+
         }
 
-        public void OptionMenu()//print main menu 
+        internal void OptionMenu()//print main menu 
         {
             Console.WriteLine(" select one option: ");
             Console.WriteLine("(01) SPECIFY ORDER TYPE");
@@ -69,7 +88,7 @@ namespace LP_P1
                 case 3: //search
                     Console.Clear();
                     break;
-                    
+
                 case 4: //reset values
                     Console.Clear();
 
@@ -85,10 +104,10 @@ namespace LP_P1
         }
 
 
-        public void SortMenu()//print sort menu 
+        internal void SortMenu()//print sort menu 
         {
 
-        	Console.WriteLine("selected:{0} ", values[14]);
+            Console.WriteLine("selected:{0} ", values[14]);
             Console.WriteLine("");
             Console.WriteLine("select one sort type: ");
             Console.WriteLine("(01) ID");
@@ -153,7 +172,7 @@ namespace LP_P1
                 case 8:
                     Console.Clear();
                     Console.WriteLine("number of players selected");
-                     values[14] = "PLAYERS";
+                    values[14] = "PLAYERS";
                     SortMenu();
                     break;
                 case 9:
@@ -176,17 +195,17 @@ namespace LP_P1
             }
         }
 
-        public void SearchMenu()//print search menu 
-        {   
-        	Console.WriteLine("SELECTED: {0} {1} {2} {3} {4} {5} {6}"
-        							  +" {7} {8} {9} {10} {11} {12} {13}",
-        							   values[0],values[1],values[2],
-        							   values[3],values[4],values[5],
-        							   values[6],values[7],values[8],
-        							   values[9],values[10],values[11],
-        							   			 values[12],values[13]);
+        internal void SearchMenu()//print search menu 
+        {
+            Console.WriteLine("SELECTED: {0} {1} {2} {3} {4} {5} {6}"
+                                      + " {7} {8} {9} {10} {11} {12} {13}",
+                                       values[0], values[1], values[2],
+                                       values[3], values[4], values[5],
+                                       values[6], values[7], values[8],
+                                       values[9], values[10], values[11],
+                                                    values[12], values[13]);
 
-        	Console.WriteLine("Search by: ");
+            Console.WriteLine("Search by: ");
             Console.WriteLine("(01) NAME");
             Console.WriteLine("(02) DATE");
             Console.WriteLine("(03) AGE");

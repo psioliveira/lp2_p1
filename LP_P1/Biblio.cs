@@ -14,7 +14,7 @@ namespace LP_P1
             gameStorage = CreateDictionary(file.gameList);
         }
 
-        public Dictionary<int, Game> CreateDictionary(string[] list)//generates hashset to be used as original list
+        internal Dictionary<int, Game> CreateDictionary(string[] list)//generates hashset to be used as original list
         {
             Dictionary<int, Game> biblio = new Dictionary<int, Game>(); //new hashset with games objects
 
@@ -31,14 +31,14 @@ namespace LP_P1
             return biblio;
         }
 
-        public List<Game> MakeList(Dictionary<int, Game> biblio)
+        internal List<Game> MakeList(Dictionary<int, Game> biblio)
         {
             List<Game> list = new List<Game>();
             list = biblio.Values.ToList(); //generate one list with all Game objects inside this Dictionary
             return list;
         }
 
-        public Game MakeSearch(Dictionary<int, Game> biblio, int key)
+        internal Game MakeSearch(Dictionary<int, Game> biblio, int key)
         {
             biblio.TryGetValue(key, out Game game);//return one Game object with a especific ID
             return game;

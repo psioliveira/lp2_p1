@@ -15,7 +15,7 @@ namespace LP_P1
             this.rend = rend;
         }
 
-        public void StartFiltering()
+        internal void StartFiltering()
         {
             rend.Menu();
 
@@ -130,7 +130,7 @@ namespace LP_P1
             }
         }
 
-        public void SortList(string s)
+        internal void SortList(string s)
         {
             switch (s)
             {
@@ -185,7 +185,7 @@ namespace LP_P1
             }
         }
 
-        public void PrintFiltered()
+        internal void PrintFiltered()
         {
             foreach (Game g in gameList)
             {
