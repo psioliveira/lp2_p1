@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Collections.Generic;
 
 namespace LP_P1
@@ -34,7 +33,6 @@ namespace LP_P1
 
         public List<Game> MakeList(Dictionary<int, Game> biblio)
         {
-
             List<Game> list = new List<Game>();
             list = biblio.Values.ToList(); //generate one list with all Game objects inside this Dictionary
             return list;
@@ -42,15 +40,9 @@ namespace LP_P1
 
         public Game MakeSearch(Dictionary<int, Game> biblio, int key)
         {
-            
             biblio.TryGetValue(key, out Game game);//return one Game object with a especific ID
             return game;
         }
-
     }
-
-
-
-
 }
 

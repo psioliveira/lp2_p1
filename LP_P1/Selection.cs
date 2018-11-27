@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LP_P1
 {
@@ -10,6 +8,7 @@ namespace LP_P1
     {
         internal Renderer rend = new Renderer();
         internal List<Game> gameList;
+
         public Selection(List<Game> gameList, Renderer rend)
         {
             this.gameList = gameList;
@@ -179,6 +178,10 @@ namespace LP_P1
 
                     gameList = gameList.OrderByDescending(game => game.achievementCount).ToList();
                     break;
+
+                default:
+                    gameList = gameList.OrderByDescending(game => game.id).ToList();
+                    break;
             }
         }
 
@@ -187,6 +190,7 @@ namespace LP_P1
             foreach (Game g in gameList)
             {
                 g.PrintAllValues();
+                
             }
         }
     }

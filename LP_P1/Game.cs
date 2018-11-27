@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Net;
 
 namespace LP_P1
 {
@@ -38,7 +36,7 @@ namespace LP_P1
         {
             id = Convert.ToInt32(s[0]);
             name = s[1];
-            releaseDate =ChooseDateTime(s[2]);
+            releaseDate = ChooseDateTime(s[2]);
             requiredAge = Convert.ToInt32(s[3]);
             dlcCount = Convert.ToInt32(s[4]);
             metacritic = Convert.ToInt32(s[5]);
@@ -95,12 +93,14 @@ namespace LP_P1
             Console.WriteLine("");
             Console.WriteLine("");
 
+            SaveImage();
+
         }
 
         private Uri ChooseUrl(string str)
         {
             Uri urlbase;
-            if (str == "None" || str == "none" || str ==" ")
+            if (str == "None" || str == "none" || str == " ")
             {
                 urlbase = null;
                 return urlbase;
@@ -155,6 +155,18 @@ namespace LP_P1
 
         }
 
+
+        private void SaveImage()
+        {
+            using (WebClient client = new WebClient())
+            {
+                if (headerImage != null)
+                {
+                    client.DownloadFile(headerImage, @"c:\Desktop");
+                }
+
+            }
+        }
     }
 }
 
