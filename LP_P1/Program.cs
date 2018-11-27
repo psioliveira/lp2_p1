@@ -9,6 +9,7 @@ namespace LP_P1
         {
             string path = args[0];
             FileManager File = new FileManager(path);
+            ConsoleKeyInfo k = new ConsoleKeyInfo();
             do
             {
                 Console.Clear();
@@ -21,8 +22,9 @@ namespace LP_P1
                 selection.PrintFiltered();
 
                 Console.Write("you want to make another search? (1)yes or (0)no");
-             
-            } while (Console.ReadKey().Key == ConsoleKey.Y);
+                k = Console.ReadKey();
+
+            } while (k.Key == ConsoleKey.D1 || k.Key == ConsoleKey.NumPad1);
 
 
 
