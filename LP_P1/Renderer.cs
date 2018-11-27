@@ -4,12 +4,16 @@ namespace LP_P1
 {
     internal class Renderer
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public Renderer() { }
 
+        //initializes one array of strings
         internal string[] values = new string[16] { " ", " ", " ", " ", " ",
                                                     " ", " ", " ", " ", " ",
                                                     " ", " ", " ", " ", " ", " "};
-
+        
         public void Menu()//print main menu 
         {
             Console.WriteLine(" SELECT AN OPTION ");

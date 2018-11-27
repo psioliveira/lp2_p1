@@ -10,14 +10,24 @@ namespace LP_P1
         {
             string path = args[0];
             FileManager File = new FileManager(path);
-            Biblio biblio = new Biblio(File);
-            Renderer renderer = new Renderer();
-            Selection selection = new Selection(biblio.MakeList(biblio.gameStorage), renderer);
+            do
+            {
+                Console.Clear();
+                Biblio biblio = new Biblio(File);
+                Renderer renderer = new Renderer();
+                Selection selection = new Selection(biblio.MakeList(biblio.gameStorage), renderer);
 
-            selection.StartFiltering();
-            
-            selection.PrintFiltered();
 
+                selection.StartFiltering();
+                selection.PrintFiltered();
+
+                Console.Write("you want to make another search? (1)yes or (0)no");
+             
+            } while (Console.ReadKey().Key == ConsoleKey.Y);
+
+
+
+            Console.Write("Program Finished. press any key to exit.");
             Console.ReadKey();
 
         }
