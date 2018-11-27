@@ -67,15 +67,18 @@ namespace LP_P1
             Console.WriteLine("");
             Console.WriteLine("id: " + id);
             Console.WriteLine("name: " + name);
+            Console.WriteLine("site: " + PrintUrl(supportURL));
+            Console.WriteLine("===========================");
             Console.WriteLine("release date: " + releaseDate.ToString());
             Console.WriteLine("minimum age:" + requiredAge);
+            Console.WriteLine("===========================");
+            Console.WriteLine("recommendation: " + recommendationCount);
             Console.WriteLine("DLCs:" + dlcCount);
             Console.WriteLine("metacritic: " + metacritic);
             Console.WriteLine("movies: " + movieCount);
-            Console.WriteLine("recommendation: " + recommendationCount);
             Console.WriteLine("screenshots :" + screenshotCount);
-            Console.WriteLine("purchases: " + owners);
             Console.WriteLine("players: " + numberOfPlayers);
+            Console.WriteLine("purchases: " + owners);
             Console.WriteLine("achievements: " + achievementCount);
             Console.WriteLine("have controls: " + controllSupport);
             Console.WriteLine("for windows: " + platformWindows);
@@ -86,7 +89,6 @@ namespace LP_P1
             Console.WriteLine("coop: " + categoryCoop);
             Console.WriteLine("level editor: " + categoryIncludeLevelEditor);
             Console.WriteLine("vr supported: " + categoryVRSupport);
-            Console.WriteLine("site: " + PrintUrl(supportURL));
             Console.WriteLine("about: " + aboutText);
             Console.WriteLine("image url: " + PrintUrl(headerImage));
             Console.WriteLine("prints url: " + PrintUrl(website));
@@ -94,6 +96,7 @@ namespace LP_P1
             Console.WriteLine("");
 
             SaveImage();
+
 
         }
 
@@ -160,11 +163,12 @@ namespace LP_P1
         {
             using (WebClient client = new WebClient())
             {
+                string s = (Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + id +".jpg");
                 if (headerImage != null)
                 {
-                    client.DownloadFile(headerImage, @"c:\Desktop");
+                    client.DownloadFile(headerImage, s );
                 }
-
+                
             }
         }
     }
