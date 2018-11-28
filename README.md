@@ -63,7 +63,12 @@ não seja dado o caminho ao ficheiro o programa informa ao utilizador que não f
 
 ## UML
 
-
+![UML](uml.png)
 
 ## Fluxograma
 
+![fluxograma](fluxograma.png)
+
+## Conclusão
+
+con este projeto pode-se concluir que é possível ler e separar campos a partir de ficheiros do tipo CSV, assim como é possível utilizar Dictionaries como maneira de retirar informações duplicadas a partir da sua key.
