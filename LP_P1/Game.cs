@@ -2,11 +2,11 @@
 using System.Net;
 
 namespace LP_P1
-{/// <summary>
-/// Class Game, Generate the game object who contains all game data extracted from file.csv
-/// </summary>
-    class Game
-    {
+{
+    internal class Game
+    {/// <summary>
+    /// Class Game, Generate the game object who contains all game data extracted from file.csv
+    /// </summary>
 
         internal readonly int id;
         internal readonly string name;
@@ -108,8 +108,8 @@ namespace LP_P1
             Console.WriteLine("");
 
             SaveImage();
-            
-           
+
+
         }
 
 

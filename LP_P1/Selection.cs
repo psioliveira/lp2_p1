@@ -4,11 +4,11 @@ using System.Linq;
 using System.Diagnostics;
 
 namespace LP_P1
-{/// <summary>
-/// Class wich contains the selection methods, like filter, sort, print, filter and open image
-/// </summary>
+{
     internal class Selection
-    {
+    {/// <summary>
+    /// Class wich contains the selection methods, like filter, sort, print, filter and open image
+    /// </summary>
         internal Renderer rend = new Renderer();
         internal List<Game> gameList;
 

@@ -2,11 +2,12 @@
 using System.IO;
 
 namespace LP_P1
-{/// <summary>
-/// Class used for manage the csv file
-/// </summary>
+{
     class FileManager
     {
+    /// <summary>
+    /// Class used for manage the csv file
+    /// </summary>
         private readonly string path;
         internal string[] gameList;
 

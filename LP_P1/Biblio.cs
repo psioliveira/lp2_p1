@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace LP_P1
 {
-    /// <summary>
-    /// Class used for generate the dictionary and the list who is used for search and sort the games objects
-    /// </summary>
+    
     internal class Biblio
-    {
+    {/// <summary>
+     /// Class used for generate the dictionary and the list who is used for search and sort the games objects
+     /// </summary>
         internal FileManager file;//file with all games
         internal Dictionary<int, Game> gameStorage;
 
@@ -18,7 +18,7 @@ namespace LP_P1
         }
 
         /// <summary>
-        /// methos to generate the dictionary with all games in the csv file
+        /// methods to generate the dictionary with all games in the csv file
         /// </summary>
         /// <param name="list">list with all strings from csv file</param>
         /// <returns></returns>
