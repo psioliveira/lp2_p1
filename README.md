@@ -1,6 +1,6 @@
 
 # 1º Projeto de Linguagens de Programação II 2018/2019
-realizado por Pedro Siqueira P. Oliveira (a21705187)
+Realizado por Pedro Siqueira P. Oliveira (a21705187).
 Repositório Git: https://github.com/psioliveira/lp2_p1;
 
 Projeto inteiramente feito por Pedro Siqueira Pereira de Oliveira.
@@ -17,16 +17,15 @@ específicos, como descarregar a imagem de apresentação do jogo.
 
 ## Objetivos
 
-O projecto tem como objetivo a avaliação dos alunos da cadeira de Linguagem de Programação II
-no quesito programação em linguagem C# com o material de ensino dado até a aua 8, no curso de Videojogos.
+O projeto tem como objetivo a avaliação dos alunos da cadeira de Linguagens de Programação II no quesito programação em linguagem C# com o material de ensino dado até a aula 8, no curso de Videojogos, da universidade Lusófona.
 
 ## Solução
 
-Para este projeto foi gerado seis ficheiros de código dos quais:
+Para este projeto foi gerado seis ficheiros de código, dos quais:
 
 1. Program.cs:
     
-    Classe responsável pelo método main, onde decorre to programa em si.
+    Responsável pelo método main, onde decorre to programa em si.
 
 2. Game.cs:
     
@@ -51,9 +50,6 @@ Para este projeto foi gerado seis ficheiros de código dos quais:
 
     Classe responsável por imprimir no ecrã os menus do programa, assim como solicitar os inputs do usuário.
 
-
-
-
 ## Desenvolvimento
 
 O programa pode foi desenvolvido em formato de Solução Visual Studio 2017, Console App (.NET framework).
@@ -71,4 +67,4 @@ não seja dado o caminho ao ficheiro o programa informa ao utilizador que não f
 
 ## Conclusão
 
-con este projeto pode-se concluir que é possível ler e separar campos a partir de ficheiros do tipo CSV, assim como é possível utilizar Dictionaries como maneira de retirar informações duplicadas a partir da sua key.
+com este projeto pode-se concluir que é possível ler e separar campos a partir de ficheiros do tipo CSV, assim como é possível utilizar Dictionaries como maneira de retirar informações duplicadas a partir da sua key.
