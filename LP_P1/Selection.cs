@@ -205,14 +205,34 @@ namespace LP_P1
         /// </summary>
         internal void PrintFiltered()
         {
+            int i = 0;
             foreach (Game g in gameList)
             {
-                g.PrintAllValues();
 
-                
+                if ((i % 10) == 0)
+                {
+                    Console.WriteLine("next 10? (y)es or (n)o");
+                    if (Console.ReadKey().Key == ConsoleKey.Y)
+                    {
+                        Console.Clear();
+                        g.PrintAllValues();
 
+                        i++;
+                    }
+                    else
+                    {
+                        break;
+                    }
+
+                }
+                else
+                {
+                    g.PrintAllValues();
+
+                    i++;
+                }
             }
-            
+
         }
 
         /// <summary>
@@ -222,7 +242,7 @@ namespace LP_P1
         {
             if (gameList.Count == 1)
             {
-                Process.Start(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" +gameList.First().id + ".jpg");
+                Process.Start(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + gameList.First().id + ".jpg");
             }
         }
     }
