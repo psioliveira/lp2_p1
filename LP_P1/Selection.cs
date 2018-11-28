@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics;
 
 namespace LP_P1
 {
@@ -190,7 +191,19 @@ namespace LP_P1
             foreach (Game g in gameList)
             {
                 g.PrintAllValues();
+
                 
+
+            }
+            
+        }
+
+
+        internal void OpnIMG()
+        {
+            if (gameList.Count == 1)
+            {
+                Process.Start(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" +gameList.First().id + ".jpg");
             }
         }
     }

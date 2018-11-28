@@ -75,35 +75,36 @@ namespace LP_P1
             Console.WriteLine("about: \n " + aboutText);
             Console.WriteLine("===========================");
             Console.WriteLine("recommendation: " + recommendationCount);
+            Console.WriteLine("players: " + numberOfPlayers);
+            Console.WriteLine("purchases: " + owners);
+            Console.WriteLine("===========================");
             Console.WriteLine("DLCs:" + dlcCount);
+            Console.WriteLine("achievements: " + achievementCount);
             Console.WriteLine("metacritic: " + metacritic);
             Console.WriteLine("movies: " + movieCount);
             Console.WriteLine("screenshots :" + screenshotCount);
-            Console.WriteLine("players: " + numberOfPlayers);
-            Console.WriteLine("purchases: " + owners);
-            Console.WriteLine("achievements: " + achievementCount);
-            Console.WriteLine("have controls: " + controllSupport);
             Console.WriteLine("===========================");
             Console.WriteLine("for windows: " + platformWindows);
             Console.WriteLine("for linux: " + platformLinux);
             Console.WriteLine("for macOS: " + platformMac);
+            Console.WriteLine("===========================");
             Console.WriteLine("single player: " + categorySinglePlayer);
             Console.WriteLine("multiplayer: " + categoryMultiplayer);
             Console.WriteLine("coop: " + categoryCoop);
+            Console.WriteLine("===========================");
             Console.WriteLine("level editor: " + categoryIncludeLevelEditor);
+            Console.WriteLine("Controller support: " + controllSupport);
             Console.WriteLine("vr supported: " + categoryVRSupport);
-            Console.WriteLine("about: " + aboutText);
             Console.WriteLine("===========================");
             Console.WriteLine("image url: " + PrintUrl(headerImage));
             Console.WriteLine("prints url: " + PrintUrl(website));
-
             Console.WriteLine("===========================");
             Console.WriteLine("");
             Console.WriteLine("");
 
-           // SaveImage();
-
-
+            SaveImage();
+            
+           
         }
 
         private Uri ChooseUrl(string str)
@@ -169,12 +170,12 @@ namespace LP_P1
         {
             using (WebClient client = new WebClient())
             {
-                string s = (Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + id +".jpg");
+                string s = (Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + id + ".jpg");
                 if (headerImage != null)
                 {
-                    client.DownloadFile(headerImage, s );
+                    client.DownloadFile(headerImage, s);
                 }
-                
+
             }
         }
     }
