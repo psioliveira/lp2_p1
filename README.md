@@ -67,7 +67,7 @@ não seja dado o caminho ao ficheiro o programa informa ao utilizador que não f
 
 ## Fluxograma
 
-![fluxograma](fluxograma.png)
+![fluxograma](fluxograma.PNG)
 
 ## Conclusão
 
