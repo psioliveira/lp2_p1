@@ -2,13 +2,18 @@
 using System.IO;
 
 namespace LP_P1
-{
+{/// <summary>
+/// Class used for manage the csv file
+/// </summary>
     class FileManager
     {
         private readonly string path;
         internal string[] gameList;
 
-
+        /// <summary>
+        /// method to validate the csv file
+        /// </summary>
+        /// <param name="path">Comand line argument passed by the user.</param>
         public FileManager(string path)
         {
 
@@ -22,6 +27,11 @@ namespace LP_P1
             gameList = TryOppen(path);
         }
 
+        /// <summary>
+        /// method who tries to open the file.
+        /// </summary>
+        /// <param name="path"> file path </param>
+        /// <returns></returns>
         private string[] TryOppen(string path)
         {
             try
@@ -35,7 +45,11 @@ namespace LP_P1
                 
             }
         }
-
+         /// <summary>
+         /// method to split the file lines by comas.
+         /// </summary>
+         /// <param name="str"> file string </param>
+         /// <returns></returns>
         internal string[] SplitLine(string str)
         {
             string[] data = str.Split(','); //splitted string

@@ -4,7 +4,10 @@
 namespace LP_P1
 {
     class Program
-    {
+    {/// <summary>
+    /// main program
+    /// </summary>
+    /// <param name="args">Command line arguments, used for open the file.</param>
         static void Main(string[] args)
         {
             string path = args[0]; //select the File path as the first comand line argument 

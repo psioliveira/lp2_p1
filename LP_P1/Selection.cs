@@ -4,7 +4,9 @@ using System.Linq;
 using System.Diagnostics;
 
 namespace LP_P1
-{
+{/// <summary>
+/// Class wich contains the selection methods, like filter, sort, print filter and open image
+/// </summary>
     internal class Selection
     {
         internal Renderer rend = new Renderer();
@@ -16,6 +18,9 @@ namespace LP_P1
             this.rend = rend;
         }
 
+        /// <summary>
+        /// Method to call the main menu and filtering with selected filters
+        /// </summary>
         internal void StartFiltering()
         {
             rend.Menu();
@@ -23,6 +28,10 @@ namespace LP_P1
             FilterSearch(rend.values);
         }
 
+        /// <summary>
+        /// Method for select which filter is valid
+        /// </summary>
+        /// <param name="s">string array with all valid filters</param>
         private void FilterSearch(string[] s)
         {
             DateTime d = default(DateTime);
@@ -131,6 +140,10 @@ namespace LP_P1
             }
         }
 
+        /// <summary>
+        /// Method to sort the list with one especyfic key
+        /// </summary>
+        /// <param name="s">string with the specified key</param>
         internal void SortList(string s)
         {
             switch (s)
@@ -186,6 +199,10 @@ namespace LP_P1
             }
         }
 
+
+        /// <summary>
+        /// method to print the filtered list
+        /// </summary>
         internal void PrintFiltered()
         {
             foreach (Game g in gameList)
@@ -198,7 +215,9 @@ namespace LP_P1
             
         }
 
-
+        /// <summary>
+        /// method to omen the downloaded image
+        /// </summary>
         internal void OpnIMG()
         {
             if (gameList.Count == 1)

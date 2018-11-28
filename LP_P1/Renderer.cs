@@ -23,13 +23,13 @@ namespace LP_P1
             Console.WriteLine("(02) MAKE ONE SEARCH");
             Console.WriteLine("(00) QUIT");
 
-            int answer;///user input
-            bool flag = false; ///check condition
+            int answer;//user input
+            bool flag = false; //check condition
 
             do
             {
-                string userInput = Console.ReadLine(); ///recieve the user input
-                flag = int.TryParse(userInput, out answer);/// flag try to convert the answer into one int
+                string userInput = Console.ReadLine(); //recieve the user input
+                flag = int.TryParse(userInput, out answer);// flag try to convert the answer into one int
                 if (answer < 0 || answer > 2 || flag == false)
                 {
                     Console.Clear();
@@ -46,17 +46,17 @@ namespace LP_P1
 
             switch (answer)
             {
-                case 1: ///add sort type
+                case 1: //add sort type
                     Console.Clear();
                     Console.WriteLine("INSERT ONE ID: ");
                     values[15] = Console.ReadLine();
                     break;
 
-                case 2: ///go to option menu
+                case 2: //go to option menu
                     Console.Clear();
                     OptionMenu();
                     break;
-                case 0: ///exit program
+                case 0: //exit program
                     Console.Clear();
                     Environment.Exit(0);
                     break;
@@ -64,7 +64,11 @@ namespace LP_P1
 
         }
 
-        internal void OptionMenu()///print main menu 
+
+        /// <summary>
+        /// Secondary menu, for extensives searches
+        /// </summary>
+        internal void OptionMenu()//print main menu 
         {
             Console.WriteLine(" select one option: ");
             Console.WriteLine("(01) SPECIFY ORDER TYPE");
@@ -77,36 +81,38 @@ namespace LP_P1
 
             switch (answer)
             {
-                case 1: ///add sort type
+                case 1: //add sort type
                     Console.Clear();
                     SortMenu();
                     break;
 
-                case 2: ///add search filter
+                case 2: //add search filter
                     Console.Clear();
                     SearchMenu();
                     break;
 
-                case 3: ///search
+                case 3: //search
                     Console.Clear();
                     break;
 
-                case 4: ///reset values
+                case 4: //reset values
                     Console.Clear();
 
                     Console.WriteLine("VALUES RESETED");
                     values = new string[16] { " ", " ", " ", " ", " ", " "," ",
                                         " ", " ", " ", " ", " "," "," "," "," "};
                     break;
-                case 0: ///go to main menu
+                case 0: //go to main menu
                     Console.Clear();
                     Menu();
                     break;
             }
         }
 
-
-        internal void SortMenu()///print sort menu 
+        /// <summary>
+        /// Sorting menu
+        /// </summary>
+        internal void SortMenu()//print sort menu 
         {
 
             Console.WriteLine("selected:{0} ", values[14]);
@@ -129,83 +135,87 @@ namespace LP_P1
 
             switch (answer)
             {
-                case 1:///add Id as sort type
+                case 1://add Id as sort type
                     Console.Clear();
                     Console.WriteLine("Id selected");
                     values[14] = "ID";
                     SortMenu();
                     break;
 
-                case 2:/// add name as sort type
+                case 2:// add name as sort type
                     Console.Clear();
                     Console.WriteLine("name selected");
                     values[14] = "NAME";
                     SortMenu();
                     break;
 
-                case 3:///add launch date as sort type
+                case 3://add launch date as sort type
                     Console.Clear();
                     Console.WriteLine("launch date selected");
                     values[14] = "LAUNCH DATE";
                     SortMenu();
                     break;
 
-                case 4: /// add metacritic as sort type
+                case 4: // add metacritic as sort type
                     Console.Clear();
                     Console.WriteLine("metacritic selected");
                     values[14] = "METACRITIC";
                     SortMenu();
                     break;
 
-                case 5: /// add number of dlcs as sort type
+                case 5: // add number of dlcs as sort type
                     Console.Clear();
                     Console.WriteLine("number of dlcs selected");
                     values[14] = "DLCS";
                     SortMenu();
                     break;
 
-                case 6: /// add number of recomendations as sort type
+                case 6: // add number of recomendations as sort type
                     Console.Clear();
                     Console.WriteLine("recommendations selected");
                     values[14] = "RECOMMENDATIONS";
                     SortMenu();
                     break;
 
-                case 7: /// add owners number as sort type
+                case 7: // add owners number as sort type
                     Console.Clear();
                     Console.WriteLine("number of owners selected");
                     values[14] = "OWNERS";
                     SortMenu();
                     break;
 
-                case 8: /// add player numbers as sort type
+                case 8: // add player numbers as sort type
                     Console.Clear();
                     Console.WriteLine("number of players selected");
                     values[14] = "PLAYERS";
                     SortMenu();
                     break;
 
-                case 9: /// add achievements number as sort type
+                case 9: // add achievements number as sort type
                     Console.Clear();
                     Console.WriteLine("number of achievements selected");
                     values[14] = "ACHIEVEMENTS";
                     SortMenu();
                     break;
 
-                case 10: /// clear sort type
+                case 10: // clear sort type
                     Console.Clear();
                     Console.WriteLine("SORT CLEARED");
                     values[14] = " ";
                     SortMenu();
                     break;
 
-                case 0: /// return to option menu
+                case 0: // return to option menu
                     Console.Clear();
                     OptionMenu();
                     break;
             }
         }
 
+
+        /// <summary>
+        /// Search menu with especific filters
+        /// </summary>
         internal void SearchMenu()//print search menu 
         {
             Console.WriteLine("          NAME DATE AGE META RECOMM CTRLR");
@@ -237,96 +247,96 @@ namespace LP_P1
             int answer = Convert.ToInt32(Console.ReadLine());
             switch (answer)
             {
-                case 1:///select name as search index
+                case 1://select name as search index
                     Console.Clear();
                     Console.WriteLine("enter the NAME:");
                     values[0] = Console.ReadLine();
                     SearchMenu();
                     break;
 
-                case 2:/// select date as search index
+                case 2:// select date as search index
                     Console.Clear();
                     Console.WriteLine("enter the DATE: (Example: Nov 1 2000)");
                     values[1] = Console.ReadLine();
                     SearchMenu();
                     break;
 
-                case 3: /// select minimum age as search index
+                case 3: // select minimum age as search index
                     Console.Clear();
                     Console.WriteLine("enter the MINIMUM AGE (int):");
                     values[2] = Console.ReadLine();
                     SearchMenu();
                     break;
 
-                case 4: ///select metacritic as search index
+                case 4: //select metacritic as search index
                     Console.Clear();
                     Console.WriteLine("enter the METACRITIC(int):");
                     values[3] = Console.ReadLine();
                     SearchMenu();
                     break;
 
-                case 5:/// select recomendation count as search index
+                case 5:// select recomendation count as search index
                     Console.Clear();
                     Console.WriteLine("enter the NUMBER OF RECOMMENDATIONS(int):");
                     values[4] = Console.ReadLine();
                     SearchMenu();
                     break;
 
-                case 6:///set controller support as search index
+                case 6://set controller support as search index
                     Console.Clear();
                     values[5] = "true";
                     SearchMenu();
                     break;
 
-                case 7: /// set windows support as search index
+                case 7: // set windows support as search index
                     Console.Clear();
                     values[6] = "true";
                     SearchMenu();
                     break;
 
-                case 8:///set linux support as search index
+                case 8://set linux support as search index
                     Console.Clear();
                     values[7] = "true";
                     SearchMenu();
                     break;
 
-                case 9:///set macOS support as search index
+                case 9://set macOS support as search index
                     Console.Clear();
                     values[8] = "true";
                     SearchMenu();
                     break;
 
-                case 10: /// set single player mode as search index
+                case 10: // set single player mode as search index
                     Console.Clear();
                     values[9] = "true";
                     SearchMenu();
                     break;
 
-                case 11:///set multiplayer as search index
+                case 11://set multiplayer as search index
                     Console.Clear();
                     values[10] = "true";
                     SearchMenu();
                     break;
 
-                case 12:///set cooperative as search index
+                case 12://set cooperative as search index
                     Console.Clear();
                     values[11] = "true";
                     SearchMenu();
                     break;
 
-                case 13:///set level editos as search index
+                case 13://set level editos as search index
                     Console.Clear();
                     values[12] = "true";
                     SearchMenu();
                     break;
 
-                case 14:///set VR ready as search index
+                case 14://set VR ready as search index
                     Console.Clear();
                     values[13] = "true";
                     SearchMenu();
                     break;
 
-                case 0:///clear search index list
+                case 0://clear search index list
                     Console.Clear();
                     OptionMenu();
                     break;

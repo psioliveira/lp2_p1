@@ -2,7 +2,9 @@
 using System.Net;
 
 namespace LP_P1
-{
+{/// <summary>
+/// Class Game, Generate the game object who contains all game data extracted from file.csv
+/// </summary>
     class Game
     {
 
@@ -62,6 +64,9 @@ namespace LP_P1
 
         }
 
+        /// <summary>
+        /// Methos used to print all values about this object.
+        /// </summary>
         public void PrintAllValues()
         {
             Console.WriteLine("");
@@ -107,6 +112,12 @@ namespace LP_P1
            
         }
 
+
+        /// <summary>
+        /// Method to verify the URL 
+        /// </summary>
+        /// <param name="str"> string which supposely contains the link</param>
+        /// <returns></returns>
         private Uri ChooseUrl(string str)
         {
             Uri urlbase;
@@ -128,6 +139,12 @@ namespace LP_P1
 
         }
 
+
+        /// <summary>
+        /// methos to print the url or the NONE word by default
+        /// </summary>
+        /// <param name="url">URL who need to be printed</param>
+        /// <returns></returns>
         private string PrintUrl(Uri url)
         {
             string s;
@@ -143,7 +160,11 @@ namespace LP_P1
             return s;
         }
 
-
+        /// <summary>
+        /// Method to verify the DateTime
+        /// </summary>
+        /// <param name="str"> string which supposely contains the DateTime</param>
+        /// <returns></returns>
         private DateTime ChooseDateTime(string str)
         {
             DateTime DateTimeBase;
@@ -165,7 +186,9 @@ namespace LP_P1
 
         }
 
-
+        /// <summary>
+        /// Method to save the header image on Desktop
+        /// </summary>
         private void SaveImage()
         {
             using (WebClient client = new WebClient())
