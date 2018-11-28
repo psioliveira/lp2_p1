@@ -1,39 +1,55 @@
-<!--
-1º Projeto de Linguagens de Programação II 2018/2019 (c) by Nuno Fachada
-
-1º Projeto de Linguagens de Programação II 2018/2019 is licensed under a
-Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
-
-You should have received a copy of the license along with this
-work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
--->
 
 # 1º Projeto de Linguagens de Programação II 2018/2019
-
+realizado por Pedro Siqueira P. Oliveira (a21705187)
 ## Descrição do problema
 
-Os grupos devem implementar um programa em C# \[[1][ref1],[2][ref2]\] que
-manipule e analise uma série de dados sobre jogos do Steam \[[3][ref3]\]. O
-programa deve começar por ler um ficheiro [CSV][], que contém os dados em
+Os grupos devem implementar um programa em C# que
+manipule e analise uma série de dados sobre jogos do Steam . O
+programa deve começar por ler um ficheiro CSV, que contém os dados em
 questão. O utilizador do programa pode depois colocar questões sobre os jogos,
 como por exemplo, quais os jogos lançados a partir de determinada data, que
 jogos suportam controlador, bem como efetuar algumas ações sobre jogos
-específicos, tais como abrir a respetiva página do Steam no *browser* ou
-descarregar a imagem de apresentação do jogo.
+específicos, como descarregar a imagem de apresentação do jogo.
 
-### Conteúdos do ficheiro CSV
+## Objetivos
 
-Os ficheiros [CSV][] (*comma-separated values*) contêm tabelas de dados, sendo
-que os campos em cada linha estão separados por vírgulas. Este tipo de
-ficheiros pode ou não ter uma linha de cabeçalho. Segue-se um exemplo:
+O projecto tem como objetivo a avaliação dos alunos da cadeira de Linguagem de Programação II
+no quesito programação em linguagem C# com o material de ensino dado até a aua 8, no curso de Videojogos.
 
-```
-Id,Type,Health,Mana,Shield
-1,Elf,50,200,40
-2,Dwarf,40,100,150
-3,Troll,100,10,140
-4,Wizard,25,300,30
-```
+## Solução
+
+Para este projeto foi gerado seis ficheiros de código dos quais:
+
+1. Program.cs:
+    
+    Classe responsável pelo método main, onde decorre to programa em si.
+
+2. Game.cs:
+    
+    Classe responsável por instanciar objetos com todas as variáveis de um dado jogo passadas a partir do ficheiro CSV assim como é responsável pelos métodos de imprimir todos os valores na linha de comandos e de salvar a imagem do jogo no desktop. 
+
+
+3. Biblio.cs:
+    
+    Classe Responsável por gerar um Dicionário com todos os jogos passados pelo ficheiro csv, utilizando o campo ID como chave para pesquisa.
+    Responsável por gerar uma lista com objetos Game para ser efectuada a pesquisa e o sorting.
+
+4. Selection.cs:
+
+    Classe responsável pelos métodos de pesquisa, organização e filtragem dos jogos na lista de jogos.
+    Contém também o método para abrir as imagens do Desktop a partir do seu nome(ID do próprio game).
+
+5. FileManager.cs:
+
+    Classe responsável por verificar a abertura do ficheiro CSV e, caso consiga abri-lo, o devolve em formato de um conjunto de strings.
+
+6. Renderer.cs:
+
+    Classe responsável por imprimir no ecrã os menus do programa, assim como solicitar os inputs do usuário.
+
+
+
+
 
 No caso em questão, os ficheiros CSV têm uma série de campos com informação
 sobre um videojogo disponível no Steam, nomedamente:

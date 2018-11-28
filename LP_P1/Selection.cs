@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace LP_P1
 {/// <summary>
-/// Class wich contains the selection methods, like filter, sort, print filter and open image
+/// Class wich contains the selection methods, like filter, sort, print, filter and open image
 /// </summary>
     internal class Selection
     {
